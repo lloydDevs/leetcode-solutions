@@ -15,4 +15,6 @@ class Solution:
             reversed_half = reversed_half * 10 + x % 10
             x //= 10
 
+	//makes_even_and_odd
+
         return x == reversed_half or x == reversed_half // 10
