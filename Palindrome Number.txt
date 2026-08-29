@@ -1,5 +1,7 @@
 Palindrom Number:
 
+This is my first solution
+
 class Solution:
     def isPalindrome(self, x: int) -> bool:
        
