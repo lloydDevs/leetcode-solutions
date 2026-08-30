@@ -1,0 +1,46 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+
+        # Store the value of every Roman numeral.
+        values = {
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000
+        }
+
+        # This will store our final answer.
+        total = 0
+
+        # Loop through every character in the string.
+        for i in range(len(s)):
+
+            # Get the value of the current Roman numeral.
+            current = values[s[i]]
+
+            # Check if there is a character after the current one.
+            if i + 1 < len(s):
+
+                # Get the value of the next Roman numeral.
+                next_value = values[s[i + 1]]
+
+                # If the current value is smaller than the next value,
+                # we need to subtract the current value.
+                if current < next_value:
+                    total -= current
+
+                # Otherwise, add the current value.
+                else:
+                    total += current
+
+            # If this is the last character,
+            # there is no next character to compare with,
+            # so simply add its value.
+            else:
+                total += current
+
+        # Return the final converted integer.
+        return total
