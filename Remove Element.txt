@@ -1,0 +1,23 @@
+class Solution:
+    def removeElement(self, nums: list[int], val: int) -> int:
+
+        # 'k' tells us where to put the next number
+        # that is NOT equal to val.
+        k = 0
+
+        # 'i' goes through every element in the array.
+        for i in range(len(nums)):
+
+            # Check if the current number is NOT the value
+            # that we want to remove.
+            if nums[i] != val:
+
+                # Copy the current valid number to position k.
+                nums[k] = nums[i]
+
+                # Move k forward because we just stored
+                # one valid number.
+                k += 1
+
+        # k is the number of elements that are NOT equal to val.
+        return k
