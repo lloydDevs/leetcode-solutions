@@ -1,0 +1,40 @@
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+
+        # Start at the last digit of a
+        i = len(a) - 1
+
+        # Start at the last digit of b
+        j = len(b) - 1
+
+        # Store the carry
+        carry = 0
+
+        # Store the answer
+        result = []
+
+        # Continue while either string has digits
+        # or there is still a carry
+        while i >= 0 or j >= 0 or carry:
+
+            # Get digit from a, or 0 if a is finished
+            digit_a = int(a[i]) if i >= 0 else 0
+
+            # Get digit from b, or 0 if b is finished
+            digit_b = int(b[j]) if j >= 0 else 0
+
+            # Add both digits and the carry
+            total = digit_a + digit_b + carry
+
+            # Store the binary result digit
+            result.append(str(total & 1))
+
+            # Calculate the carry
+            carry = total >> 1
+
+            # Move to the previous digit
+            i -= 1
+            j -= 1
+
+        # Reverse because we calculated from right to left
+        return "".join(reversed(result))
