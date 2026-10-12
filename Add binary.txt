@@ -7,7 +7,7 @@ class Solution:
         # Start at the last digit of b
         j = len(b) - 1
 
-        # Store the carry
+        # Store the carryyy
         carry = 0
 
         # Store the answer
