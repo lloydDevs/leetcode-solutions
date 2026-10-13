@@ -36,5 +36,5 @@ class Solution:
             i -= 1
             j -= 1
 
-        # Reverse because we calculated from right to left
+        # Reverse because we calculated from right to left ye
         return "".join(reversed(result))
